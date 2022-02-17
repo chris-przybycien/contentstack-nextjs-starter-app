@@ -9,6 +9,7 @@ import BlogSection from "./blog-section";
 import SectionBucket from "./section-bucket";
 import AboutSectionBucket from "./about-section-bucket";
 import SectionWithHtmlCode from "./section-with-html-code";
+import PageForm from "./form";
 
 export default function RenderComponents(props) {
   const {
@@ -77,6 +78,14 @@ export default function RenderComponents(props) {
               key={`component-${key}`}
             />
           );
+        }
+        if (component.form) {
+          return (
+            <PageForm
+              props={component.form}
+              key={`component-${key}`}
+            />
+          )
         }
       })}
     </div>

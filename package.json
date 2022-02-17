@@ -12,7 +12,9 @@
   },
   "dependencies": {
     "@contentstack/live-preview-utils": "^1.0.1",
+    "@contentstack/ui-extensions-sdk": "^2.2.0",
     "@contentstack/utils": "^1.1.1",
+    "@contentstack/venus-components": "^1.0.2",
     "contentstack": "^3.15.0",
     "html-react-parser": "^1.4.6",
     "moment": "^2.29.1",

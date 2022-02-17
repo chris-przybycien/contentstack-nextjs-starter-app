@@ -4,6 +4,7 @@ import "nprogress/nprogress.css";
 import "../styles/third-party.css";
 import "../styles/style.css";
 import '@contentstack/live-preview-utils/dist/main.css';
+import '@contentstack/venus-components/build/main.css';
 
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());

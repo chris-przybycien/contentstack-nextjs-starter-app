@@ -1352,3 +1352,21 @@ footer a {
 .string-value {
   color: #5d9ccb;
 }
+
+.customForm {
+  padding: 0 15rem;
+}
+
+.formHeading {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.formDesc {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.formField {
+  margin-bottom: 1rem;
+}

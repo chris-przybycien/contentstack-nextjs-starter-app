@@ -109,4 +109,26 @@ export default {
       );
     });
   },
+
+  // GraphQL queries
+  async callContentstack(query, variables = {}) {
+    const fetchUrl = `https://graphql.contentstack.com/stacks/${Stack.headers.api_key}?environment=${Stack.environment}`;
+    const fetchOptions = {
+      method: "POST",
+      headers:
+      {
+        access_token: Stack.headers.access_token,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ query, variables }),
+    };
+
+    try {
+      const response = await fetch(fetchUrl, fetchOptions);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      throw new Error("Could not fetch data from Contentstack!");
+    }
+  },
 };

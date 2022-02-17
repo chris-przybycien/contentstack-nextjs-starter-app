@@ -39,6 +39,18 @@ export const getAboutRes = async (entryUrl) => {
   return response[0];
 };
 
+export const getSlugRes = async (entryUrl) => {
+  const response = await Stack.getEntryByUrl({
+    contentTypeUid: 'page',
+    entryUrl,
+    jsonRtePath: [
+      'page_components.section_with_buckets.buckets.description',
+      'page_components.form.form_reference.uid',
+    ],
+  });
+  return response[0];
+};
+
 export const getContactRes = async (entryUrl) => {
   const response = await Stack.getEntryByUrl({
     contentTypeUid: 'page',
@@ -74,4 +86,56 @@ export const getBlogPostRes = async (entryUrl) => {
     jsonRtePath: ['body', 'related_post.body'],
   });
   return response[0];
+};
+
+export const getFormQuery = async (formId) => {
+  const query = `
+  query MyQuery {
+    form(uid: "${formId}") {
+      title
+      description
+      submit_button_text
+      fields {
+        ... on FormFieldsField {
+          __typename
+          field {
+            referenceConnection {
+              edges {
+                node {
+                  ... on TextboxField {
+                    title
+                    placeholder
+                    system {
+                      content_type_uid
+                    }
+                  }
+                  ... on CheckboxField {
+                    title
+                    label
+                    system {
+                      content_type_uid
+                    }
+                  }
+                  ... on FieldType {
+                    title
+                    placeholder
+                    system {
+                      content_type_uid
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }`;
+
+  const response = await Stack.callContentstack(query, {});
+  const pageContent = response.data
+    ? response.data
+    : [];
+
+  return pageContent;
 };
