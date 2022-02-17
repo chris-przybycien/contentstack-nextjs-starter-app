@@ -30,7 +30,8 @@ Read Contentstack [docs](https://www.contentstack.com/docs/)
 Learn about [Next.js](https://learnnextjs.com/)
 
 
-
+Installation instructions
+https://www.contentstack.com/docs/developers/sample-apps/build-a-starter-website-using-next-js-and-contentstack#deploy-the-website
 
 
 
