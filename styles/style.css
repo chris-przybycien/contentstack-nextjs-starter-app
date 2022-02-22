@@ -95,7 +95,7 @@ header .wrapper-logo {
 }
 
 header .wrapper-logo img {
-  width: 130px;
+  width: 80px;
 }
 
 header nav {
@@ -149,6 +149,10 @@ footer a {
 
 .footer-nav-li {
   padding: 0;
+}
+
+.footer-logo {
+  width: 80px;
 }
 
 .col-half {
@@ -352,7 +356,6 @@ footer a {
   justify-content: space-evenly;
   text-align: center;
   background: #715cdd;
-  padding: 63px;
   color: #fff;
   flex-wrap: wrap;
 }
@@ -374,6 +377,10 @@ footer a {
   text-align: center;
   margin: 63px;
   flex-wrap: wrap;
+}
+
+.home-advisor-section img {
+  max-width: 540px;
 }
 
 .member-section {
@@ -489,6 +496,12 @@ footer a {
 .mission-content-section {
   display: flex;
   width: 380px;
+}
+
+.mission-section {
+  display: flex;
+  padding-top: 20px;
+  justify-content: center;
 }
 
 .mission-icon, .mission-section-content {
